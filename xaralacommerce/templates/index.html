@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+    <h1 class="text-center pb-2">La boutique des leaders</h1>      <!--pb veut dire padding bottom-->
+
+    <div class="row">
+
+        {% if products %}
+
+        {% for product in products %}
+        {% include "partials/product_card.html" %}  <!--pour eviter les repetition de code-->
+        {% endfor %}
+
+        {% else %}
+
+        <p class="text-center">Pas de produits</p>
+
+        {% endif %}
+
+        
+</section>
+    
+
+{% endblock content %}

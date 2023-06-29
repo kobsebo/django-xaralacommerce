@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <h2>Valider votre commande</h2>
+        <ul>
+            {% for item in cart  %}
+            <li>
+                {{ item.product.name }} X {{ item.quantity }} : {{ item.total_price|floatformat }}
+            </li>
+            {% endfor %}
+        </ul>
+        <p>Total à payer: {{ cart.get_total_price }}</p>
+        <form action="#" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group mt-2">   <!--pour supprimer les caracteres nom et autres du formulaire-->
+                <label for="{{ field.id_label }}" class="form-label">{{ field.label }}:</label>    <!--pour réactiver les caracteres nom et autres du formulaire-->
+                {{ field }}
+            </div>
+            {% endfor %}
+            <div class="form-group">
+                <button class="btn btn-primary mt-4" type="submit">Valider</button>  <!--mt-4 pour mettre un espace-->
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

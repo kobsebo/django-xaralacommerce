@@ -1,0 +1,18 @@
+
+"""
+Si c'est google
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.google.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "xavkobi@gmail.com"
+EMAIL_HOST_PASSWORD = "sebastien84"
+EMAIL_USE_TLS = True
+"""
+
+
+# Paydunya
+PAYDUNYA_ACCESS_TOKENS = {
+    'PAYDUNYA-MASTER-KEY': "",
+    'PAYDUNYA-PRIVATE-KEY': "",
+    'PAYDUNYA-TOKEN': ""
+}
